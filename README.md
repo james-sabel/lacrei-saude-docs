@@ -12,7 +12,7 @@ Projeto de documentação técnica da plataforma Lacrei Saúde. A documentação
    No Linux:
 
    ```bash
-   python -m venv .venv
+   python3 -m venv .venv
    source .venv/bin/activate
    ```
 
