@@ -1,0 +1,59 @@
+:root {
+  --header-background: #fff;
+  --header-rainbow-accent: linear-gradient(
+    90deg,
+    #e85d75,
+    #f5a623,
+    #f5d547,
+    #52b788,
+    #48a9c5,
+    #8a63d2
+  );
+}
+
+.md-header {
+  background: var(--header-background);
+}
+
+.md-header__title,
+.md-header .md-header__button {
+  color: #26334a;
+}
+
+.md-header .md-search__form {
+  background-color: #f2f4f7;
+  border-radius: 0.3rem;
+}
+
+.md-header .md-search__input {
+  color: #26334a;
+}
+
+.md-header .md-search__input::placeholder {
+  color: #667085;
+  opacity: 1;
+}
+
+.md-header .md-search__icon {
+  color: #526078;
+}
+
+.md-header::after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 350px;
+  height: 3px;
+  background: var(--header-rainbow-accent);
+  content: "";
+}
+
+/* Cabeçalho do menu lateral (mobile) */
+body .md-nav--primary .md-nav__title[for="__drawer"] {
+  background-color: var(--header-background);
+  color: #26334a;
+}
+
+body .md-nav--primary .md-nav__title[for="__drawer"] .md-nav__button {
+  color: #26334a;
+}

@@ -4,6 +4,11 @@ site_author: James Sabel
 
 theme:
   name: material
+  logo: assets/images/logo-header.png
+  favicon: assets/images/logo-header.png
+
+extra_css:
+  - assets/stylesheets/extra.css
 
 plugins:
   - search
