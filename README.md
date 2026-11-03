@@ -1,51 +1,46 @@
-# Lacrei Saúde - Plataforma inclusiva de saúde
+# Lacrei Saúde Docs
 
-![Logo da Lacrei Saúde](/assets/logo.svg)
+Projeto de documentação técnica da plataforma Lacrei Saúde. A documentação é escrita em Markdown, fica na pasta `docs/` e é compilada com o MkDocs.
 
-## Sobre a Lacrei Saúde
+## Executar localmente
 
-A **Lacrei Saúde** é uma health tech de impacto social fundada em 2020, com a missão de conectar a comunidade **LGBTQIAPN+** a profissionais da saúde de forma **segura**, **inclusiva** e **acolhedora**.
+> **Pré-requisito:** ter Python instalado.
 
-## Sobre esta documentação
+1. Clone o repositório e entre na pasta do projeto.
+2. Crie e ative um ambiente virtual:
 
-> **Importante:** este projeto não é a versão final e foi elaborado com base exclusivamente nas informações fornecidas até o momento.
->
-> Informações não confirmadas estão devidamente sinalizadas como **Requer revisão** (❓) e precisam ser validadas.
+   No Linux:
 
-Esta documentação descreve os fluxos das funcionalidades da **Lacrei Saúde** e é voltada para:
+   ```bash
+   python -m venv .venv
+   source .venv/bin/activate
+   ```
 
-- **Pessoas Desenvolvedoras - Front-end e Back-end** - para entender como a interface e as APIs se comunicam e como os dados são manipulados.
-- **Pessoas Engenheiras de Software** - para entender a arquitetura e o funcionamento interno da plataforma.
-- **Pessoas recém-integradas ao projeto (onboarding)** - para facilitar a integração e compreensão do sistema.
+   No Windows (PowerShell):
 
-## Comece aqui
+   ```powershell
+   python -m venv .venv
+   .venv\Scripts\Activate.ps1
+   ```
 
-- [Montando o ambiente de desenvolvimento](docs/getting-started/setup.md) - instruções para configurar o ambiente local e iniciar a aplicação.
-- [Infraestrutura](docs/getting-started/infrastructure.md) - visão geral da infraestrutura e serviços utilizados pela plataforma.
-- [Segurança e privacidade](docs/getting-started/security-and-privacy.md) - informações sobre desenvolvimento seguro e cuidados com a proteção de dados e privacidade na plataforma.
+3. Instale as dependências:
 
-## Fluxos de funcionalidades
+   ```bash
+   pip install -r requirements.txt
+   ```
 
-As funcionalidades da plataforma são divididas em fluxos para dois tipos de perfil:
+4. Inicie o servidor local:
 
-- pessoas em busca de profissionais da saúde;
-- profissionais da saúde que oferecem seus serviços.
+   ```bash
+   mkdocs serve
+   ```
 
-### Perfil: Pessoas em busca de profissionais
+5. Acesse <http://127.0.0.1:8000> no navegador. O servidor atualiza a página automaticamente quando os arquivos da documentação são alterados.
 
-**Consultar perfis de profissionais da saúde:**
+## Compilar o site
 
-- [Visão geral](docs/user-flows/overview.md)
-- [Contrato da API](docs/user-flows/api-reference.md)
+Para gerar os arquivos estáticos em `site/`, execute:
 
----
-
-### Perfil: Profissionais da saúde que oferecem serviços
-
-> ❓ **Requer revisão:** aqui vão os fluxos de funcionalidades voltados para profissionais da saúde, como cadastro, atualização de perfil, gerenciamento da agenda, etc.
-
-## Conteúdo adicional
-
-- [Glossário e referências](docs/glossary.md)
-
-![Banner medicina e diversidade](/assets/banner.png)
+```bash
+mkdocs build
+```

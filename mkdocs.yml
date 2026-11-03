@@ -1,0 +1,33 @@
+site_name: Lacrei Saúde Docs
+site_description: Documentação técnica da plataforma Lacrei Saúde, incluindo arquitetura, fluxos e contratos de API.
+site_author: James Sabel
+
+theme:
+  name: material
+
+plugins:
+  - search
+  - mermaid2
+
+nav:
+  - Página inicial: index.md
+
+  - Comece aqui:
+      - Ambiente de desenvolvimento: getting-started/setup.md
+      - Infraestrutura: getting-started/infrastructure.md
+      - Segurança e Privacidade: getting-started/security-and-privacy.md
+
+  - APIs:
+      - Consultar profissionais:
+        - Visão geral: user-flows/overview.md
+        - Contrato da API: user-flows/api-reference.md
+
+  - Glossary: glossary.md
+
+markdown_extensions:
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:mermaid2.fence_mermaid_custom
+  

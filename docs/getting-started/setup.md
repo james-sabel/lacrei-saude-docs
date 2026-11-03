@@ -17,14 +17,9 @@ Este guia reúne os passos para preparar o ambiente Linux com as tecnologias usa
 - PostgreSQL
 - Docker e Docker Compose
 
-## Passo a passo de configuração
+## Passo a passo para configurar o ambiente
 
-1. Obter os acessos necessários
-2. Instalar as ferramentas
-3. Preparar os repositórios
-4. Iniciar os serviços e as aplicações
-
-## 1. Obter os acessos necessários
+### 1. Obter os acessos necessários
 
 Antes de começar, você precisará de acesso aos repositórios do projeto e às contas e recursos da **Lacrei Saúde**: repositórios, Figma, pacote do Marsha Design System, registros de contêineres e serviços de desenvolvimento.
 
@@ -37,9 +32,9 @@ Antes de começar, você precisará de acesso aos repositórios do projeto e às
 > - Acesso aos protótipos do Figma
 > - Acesso a documentos internos
 
-## 2. Instalar as ferramentas
+### 2. Instalar as ferramentas
 
-### Node.js e gerenciador de pacotes
+#### Node.js e gerenciador de pacotes
 
 O **Next.js** requer **Node.js**. Use a versão declarada pelo projeto; um gerenciador de versões, como [Node Version Manager - nvm](https://github.com/nvm-sh/nvm), facilita alternar versões sem alterar a instalação do sistema.
 
@@ -47,7 +42,7 @@ O **Next.js** requer **Node.js**. Use a versão declarada pelo projeto; um geren
 
 > ❓ **Requer revisão:** versão exata do Node.js e do gerenciador de pacotes (npm, pnpm ou Yarn) a ser usada. Confirmar com a equipe.
 
-### Python e Poetry
+#### Python e Poetry
 
 Instale o Python:
 
@@ -69,7 +64,7 @@ Na pasta do back-end, instale as dependências definidas pelo projeto:
 poetry install
 ```
 
-### PostgreSQL (Docker Compose)
+#### PostgreSQL (Docker Compose)
 
 O banco de dados usado pelo projeto é o PostgreSQL, executado em contêineres Docker por meio do Docker Compose.
 
@@ -85,7 +80,7 @@ docker --version
 docker compose version
 ```
 
-## 3. Preparar os repositórios
+### 3. Preparar os repositórios
 
 Clone os repositórios usando as URLs fornecidas pela equipe. Os exemplos abaixo são ilustrativos:
 
@@ -95,7 +90,7 @@ Clone os repositórios usando as URLs fornecidas pela equipe. Os exemplos abaixo
 git clone <url-do-repositorio>
 ```
 
-### Variáveis de ambiente
+#### Variáveis de ambiente
 
 > ❓ **Requer revisão:** aqui a documentação assume que o projeto contém um `.env.example` com as variáveis de ambiente necessárias.
 
@@ -107,11 +102,11 @@ Obtenha as credenciais de desenvolvimento com a equipe e substitua os valores na
 
 > **Atenção!** Lembre-se de nunca commitar o arquivo `.env` com credenciais reais. Ele deve ser mantido localmente e ignorado pelo Git.
 
-## 4. Iniciar os serviços e as aplicações
+### 4. Iniciar os serviços e as aplicações
 
 > ❓ **Requer revisão:** validar se o projeto usa de fato `docker-compose.yml`, porta do front-end, porta do back-end, porta do banco de dados e se há instruções específicas para iniciar os serviços.
 
-### Docker Compose (quando fornecido)
+#### Docker Compose (quando fornecido)
 
 No diretório que contém o arquivo `docker-compose.yml`, confira primeiro os serviços e as instruções do projeto. Em seguida, inicie os serviços:
 
@@ -132,7 +127,7 @@ Para encerrar:
 docker compose down
 ```
 
-### Front-end
+#### Front-end
 
 Entre no diretório do Next.js e execute o front-end em ambiente de desenvolvimento:
 
@@ -144,7 +139,7 @@ No navegador, acesse a interface em: http://localhost:3000
 
 Agora siga para a seção de **Back-end** para iniciar o servidor Django e validar a comunicação entre front-end e back-end.
 
-### Back-end
+#### Back-end
 
 Entre no diretório do Django e inicie o servidor de desenvolvimento:
 
@@ -158,14 +153,14 @@ Caso queira conferir se o servidor está funcionando, acesse a URL do Django no 
 
 > ❓ **Requer revisão:** incluir aqui algum comando de API de health check, se houver, para validar a comunicação entre front-end e back-end.
 
-## 5. Design System e Figma
+### 5. Design System e Figma
 
 - Solicite acesso ao arquivo ou projeto de Figma usado pela equipe.
 - Consulte as orientações do repositório para instalar e importar o **Marsha Design System**.
 - Sempre use os componentes e tokens oficiais. Caso precise recriar estilos localmente, solicite a criação de novos tokens ou componentes à equipe responsável.
 - Não inclua arquivos, fontes ou outros recursos do Figma no repositório sem verificar as permissões e o fluxo de contribuição.
 
-## 6. Verificação rápida
+### 6. Verificação rápida
 
 Ao final, confirme que:
 
@@ -182,6 +177,6 @@ Para revisar alterações locais:
 git status --short
 ```
 
-## Problemas comuns
+### Problemas comuns
 
 > ❓ **Requer revisão:** listar aqui possíveis problemas e soluções, como erros de dependências, conflitos de versão, problemas de permissão, etc. Buscar com a equipe de desenvolvimento para compilar uma lista de problemas conhecidos e suas soluções.
